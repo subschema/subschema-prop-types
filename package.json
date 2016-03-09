@@ -1,6 +1,6 @@
 {
   "name": "subschema-prop-types",
-  "version": "0.99",
+  "version": "1.0.0",
   "description": "Subschema PropTypes",
   "main": "dist/index",
   "dependencies": {},
