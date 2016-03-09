@@ -33,11 +33,10 @@ function propTypeToName(propType) {
 }
 
 function propTypesToNames(props) {
-    return Object.keys((ret, k)=> {
+    return Object.keys(props).reduce((ret, k)=> {
         ret[k] = propTypeToName(props[k]);
-
         return ret;
-    }, obj);
+    }, {});
 }
 
 const conditional = oneOfType([string, shape({
