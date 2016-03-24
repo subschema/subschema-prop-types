@@ -1,9 +1,9 @@
 "use strict";
 
-import { PropTypes } from 'react';
+import {PropTypes} from "react";
 
 //we'll re-export these for convenience in the babel6 world.
-const {string,bool,number,object,func, any, node,shape, arrayOf,instanceOf,oneOf, oneOfType} = PropTypes;
+const {string, bool, number, object, func, any, node, shape, arrayOf, instanceOf, oneOf, oneOfType} = PropTypes;
 
 function customPropType(type, name) {
     function customPropType$return(...args) {
@@ -86,6 +86,7 @@ const templateClass = customPropType(cssClass, 'templateClass');
 const injectedClass = customPropType(any, "injectedClass");
 
 const event = customPropType(func, 'event');
+
 
 const validator = customPropType(func, 'validator');
 
@@ -314,6 +315,7 @@ const api = {
     cssClass,
     error,
     errors,
+    errorEvent,
     event,
     htmlFor,
     validator,
