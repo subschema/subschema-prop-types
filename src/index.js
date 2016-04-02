@@ -40,7 +40,7 @@ function propTypesToNames(props) {
 }
 const deprecated = function (message) {
     return function deprecated$propType(props, propName, componentName) {
-        return new Error(`DEPRECATED: ${message}`);
+        return propName in props ? new Error(`DEPRECATED: ${message} in ${componentName}.propTypes.${propName}`) : void(0);
     }
 };
 const conditional = oneOfType([string, shape({
