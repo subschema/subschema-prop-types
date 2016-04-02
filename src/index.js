@@ -38,7 +38,11 @@ function propTypesToNames(props) {
         return ret;
     }, {});
 }
-
+const deprecated = function (message) {
+    return function deprecated$propType(props, propName, componentName) {
+        return new Error(`DEPRECATED: ${message}`);
+    }
+};
 const conditional = oneOfType([string, shape({
     operator: oneOfType([string, func])
 })]);
@@ -96,6 +100,7 @@ const placeholder = customPropType(string, 'placeholder');
 
 const arrayString = oneOfType([string, arrayOf(string)])
 
+const submit = customPropType(func, 'submit');
 
 const listener = customPropType(any, 'listener');
 
@@ -304,6 +309,7 @@ const injectClass = oneOfType([
 
 const api = {
     conditional,
+    deprecated,
     transition,
     injectClass,
     blurValidate,
@@ -342,6 +348,7 @@ const api = {
     fieldset,
     literal,
     options,
+    submit,
     optionsGroup,
     schema,
     value,
@@ -411,6 +418,7 @@ export default
     mixin,
     contextTypes,
     processor,
+    submit,
     value,
     validate,
     array,
@@ -419,5 +427,6 @@ export default
     typeClass,
     style,
     transition,
+    deprecated,
     string, bool, number, object, func, any, node, shape, arrayOf, instanceOf, oneOfType, oneOf
 });
