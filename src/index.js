@@ -247,7 +247,7 @@ const optionsGroup = oneOfType([
     }))
 ])
 
-const schema = oneOfType([string, shape({
+const schema = oneOfType([string, object, shape({
     fields: arrayString,
     fieldsets: oneOfType([arrayString, fieldset, arrayOf(fieldset)]),
     schema: object,
