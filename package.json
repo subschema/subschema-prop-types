@@ -20,11 +20,11 @@
     "babel-preset-stage-0": "^6.5.0",
     "expect": "^1.14.0",
     "mocha": "^2.4.5",
-    "react": "^0.14.7"
+    "react": "^15.0.2"
   },
   "scripts": {
     "test": "npm run dist && babel ./test/ -d ./test-dist && mocha ./test-dist/index-test.js",
-    "dist": "NODE_ENV=production babel ./src -d ./dist",
+    "dist": "NODE_ENV=production babel -s true ./src -d ./dist",
     "prepublish": "npm prune && npm run test"
   }
 }
