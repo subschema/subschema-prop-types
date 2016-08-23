@@ -211,7 +211,7 @@ const buttons = oneOfType([
     shape({
         buttonsClass: cssClass,
         onButtonClick: event,
-        buttons: oneOfType(arrayString, arrayOf(button)),
+        buttons: oneOfType([arrayString, arrayOf(button)]),
         buttonTemplate: template,
         buttonsTemplate: template
     })
@@ -264,7 +264,7 @@ const events = {
     onFocus: event,
     onBlur: event,
     onValid: event,
-    onChange: oneOfType(targetEvent, valueEvent)
+    onChange: oneOfType([targetEvent, valueEvent])
 };
 
 const field = customPropType(any, 'field');
